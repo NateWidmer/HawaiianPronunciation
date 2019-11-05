@@ -1,9 +1,22 @@
 package com.company;
 
 import java.awt.HeadlessException;
+
 import java.util.*;
 
 import javax.swing.JOptionPane;
+
+/**
+ * 
+ * This is the main Class.
+ * The HashMaps are created, and the other classes are initiated.
+ * The program then proceeds to ask you for input, which is checked and
+ * translated in the other classes. 
+ * It is all wrapped around in a do-while loop
+ * 
+ * @author Nate, Larissa
+ *
+ */
 
 public class Main {
 
@@ -96,7 +109,7 @@ public class Main {
 									}
 								}
 
-								if (check.IsLastCharacterInString(current_char_string, index, word_size)) {
+								if (check.IsLastCharacterInString(index, word_size)) {
 									JOptionPane.showMessageDialog(null,
 											translate.TranslateLetter(current_char_string, allowed_letters));
 								} else {
@@ -105,7 +118,7 @@ public class Main {
 								}
 
 							} else {
-								if (check.IsLastCharacterInString(current_char_string, index, word_size)) {
+								if (check.IsLastCharacterInString(index, word_size)) {
 									JOptionPane.showMessageDialog(null,
 											translate.TranslateLetter(current_char_string, allowed_letters));
 								} else {

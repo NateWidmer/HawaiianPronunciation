@@ -1,3 +1,12 @@
+/**
+ * 
+ * This is the checkTest class.
+ * It's where the JUnit Tests are performed
+ * 
+ * @author Nate
+ */
+
+
 package com.company;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -8,8 +17,16 @@ import org.junit.jupiter.api.Test;
 
 class CheckTest {
 	
+	/**
+	 * 
+	 * This is the test function that checks if the input is a Vowel
+	 * 
+	 */
+	
 	@Test
 	public void testIsVowel() {
+		
+		
 		HashMap<String, String> allowed_letters = new HashMap<String, String>();
 		allowed_letters.put("a", "ah");
 		allowed_letters.put("e", "eh");
@@ -18,6 +35,12 @@ class CheckTest {
 		allowed_letters.put("u", "oo");
 		assertTrue(allowed_letters.containsKey("a"));
 	}
+	
+	/**
+	 * 
+	 * This is the test function that checks if the input is a Valid Pair
+	 * 
+	 */
 	
 	@Test
 	public void testIsValidPair() {

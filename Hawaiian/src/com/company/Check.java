@@ -6,19 +6,66 @@ import java.util.Set;
 
 import javax.swing.JOptionPane;
 
+/**
+ * 
+ * The Check class, checks the input given. 
+ * 
+ * @author Nate, Larissa
+ *
+ */
+
 public class Check {
+	
+	/**
+	 * 
+	 * This function takes a letter and Hashmap and compares the key with the letter
+	 * if the letter is a key in the map it will return true
+	 * 
+	 * @param letter
+	 * @param allowed_letters
+	 * @return true/false
+	 */
 
 	boolean IsVowel(String letter, HashMap<String, String> allowed_letters) {
 		return allowed_letters.containsKey(letter);
 	}
+	
+	/**
+	 * 
+	 * This function takes the Vowel Pair and Hashmap and compares the key with the
+	 * pair. if the pair is a key in the map it will return true.
+	 * 
+	 * @param vowelPair
+	 * @param pairs
+	 * @return true/false
+	 */
 
 	boolean IsValidPair(String vowelPair, HashMap<String, String> pairs) {
 		return pairs.containsKey(vowelPair);
 	}
+	
+	/**
+	 * 
+	 * This function takes the Vowel, current index and the size of the word and
+	 * checks if the index is already the last one. Returns true if it is. 
+	 * 
+	 * @param index
+	 * @param word_size
+	 * @return true/false
+	 */
 
-	boolean IsLastCharacterInString(String vowel, int index, int word_size) {
+	boolean IsLastCharacterInString(int index, int word_size) {
 		return (index + 1 == word_size);
 	}
+	
+	/**
+	 * 
+	 * This function takes the current letter and checks if it is a key of the
+	 * Hashmap inside the function. Returns true if it is. 
+	 * 
+	 * @param letter
+	 * @return true/false
+	 */
 
 	boolean IsConsonant(String letter) {
 		Set<String> consonants = new HashSet<String>();
@@ -29,12 +76,18 @@ public class Check {
 		consonants.add("m");
 		consonants.add("n");
 
-		// set<String> constants({"p", "k", "h", "l", "m", "n"});
-
 		return consonants.contains(letter);
-		// return ContainsKey(constants, letter);
 	}
 
+	/**
+	 * 
+	 * This function takes the entered word and checks if it contains a consonant
+	 * which is not allowed in hawaiian. If it contains one it returns true
+	 * 
+	 * @param word
+	 * @return true/false
+	 */
+	
 	boolean IsInvalidConsonant(String word) {
 
 		boolean containsConsonants = false;
@@ -67,6 +120,15 @@ public class Check {
 
 	}
 
+	/**
+	 * 
+	 * This function takes the reply from the repeat answer and checks if the content
+	 * is a valid answer or not. If the answer is invalid an Exception will be thrown. 
+	 * 
+	 * @param answer_low
+	 * @throws AnswerNotValidException
+	 */
+	
 	public void isValidAnswer(String answer_low) throws AnswerNotValidException {
 		if ((answer_low.contentEquals("y")) || (answer_low.contentEquals("yes")) || (answer_low.contains("n"))
 				|| (answer_low.contains("no"))) {
